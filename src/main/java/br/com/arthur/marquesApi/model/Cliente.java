@@ -15,7 +15,7 @@ public class Cliente {
     private String nome;
 
     @OneToMany
-    @JoinColumn(name="id")
+    @JoinColumn(name="cliente")
     private List<Contato> contatos = new ArrayList<>();
 
     public String getNome() {
