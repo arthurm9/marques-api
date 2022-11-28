@@ -6,12 +6,11 @@ CREATE TABLE IF NOT EXISTS Contato (
     PRIMARY KEY(ID)
 );
 
-ALTER TABLE contato ADD CONSTRAINT FK_Contato_Cliente FOREIGN KEY(clienteid) REFERENCES cliente(id);
+ALTER TABLE Contato ADD CONSTRAINT FK_Contato_Cliente FOREIGN KEY(clienteid) REFERENCES Cliente(id);
 
--- INSERT INTO contato(contato, descricao, clienteid)
--- VAlUES ('Arthur Marques de Oliveira', 1),
---       ('João Érik da Silva Crisostomo', 1),
---       ('Lucas Vieira da Silva', 2),
---       ('Matheus Henrique Crispim Cola', 2),
---       ('Pedro Henrique Vieira Ribeiro', 3),
---       ('Vinícius Henrique dos Santos Pinto', 4);
+INSERT INTO Contato(clienteid, descricao, contato) VALUES
+    (1, "tel", "14123098374"),
+    (2, "tel", "43929292929"),
+    (3, "e-mail", "arjolu@gmail.com"),
+    (4, "e-mail", "thaoca@hotmail.com"),
+    (5, "tel", "32839201928");
