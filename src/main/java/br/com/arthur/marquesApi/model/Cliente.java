@@ -1,5 +1,6 @@
 package br.com.arthur.marquesApi.model;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import javax.persistence.*;
 import java.util.ArrayList;
 import java.util.List;
@@ -14,8 +15,8 @@ public class Cliente {
 
     private String nome;
 
-    @OneToMany
-    @JoinColumn(name="cliente")
+    @OneToMany(mappedBy = "cliente")
+    @JsonIgnore
     private List<Contato> contatos = new ArrayList<>();
 
     public String getNome() {
